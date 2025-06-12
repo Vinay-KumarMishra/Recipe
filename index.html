@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Quest</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Food Quest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="recipeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Recipes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recipeDropdown">
+                            <li><a href="#" class="dropdown-item" id="breakfast">Breakfast & Brunch</a></li>
+                            <li><a class="dropdown-item" href="#" id="lunch">Lunch</a></li>
+                            <li><a class="dropdown-item" href="#" id="dinner">Dinner</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="healthyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cusinie
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="healthyDropdown">
+                           
+                            <li><a class="dropdown-item" href="#" id="american">American Recipes</a></li>
+                            <li><a class="dropdown-item" href="#" id="japanese">Japanese Recipes</a></li>
+                            <li><a class="dropdown-item" href="#" id="italian">Italian Recipes</a></li>
+                            <li><a class="dropdown-item" href="#" id="french">French Recipes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="favoritesLink">Favorites</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search_input">
+                    <button class="btn btn-success" id="search_btn" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div id="videoCarousel" class="carousel slide video-carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video autoplay muted loop>
+                    <source src="vedio1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="carousel-overlay">
+                    <h1>Welcome to Food Quest</h1>
+                    <p>Discover delicious recipes and healthy meal ideas</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop>
+                    <source src="vedio2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="carousel-overlay">
+                    <h1>Explore Tasty Dishes</h1>
+                    <p>From breakfast to dinner, find your favorite recipes</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop>
+                    <source src="vedio3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="carousel-overlay">
+                    <h1>Stay Healthy, Eat Fresh</h1>
+                    <p>Discover nutritious and delicious meal ideas</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>    
+    <div id="ingredient-filter" class="ingredients-section">
+    <h4>Pick Important Ingredients:</h4>
+    <div class="ingredients-container">
+        <!-- Proteins -->
+        <label><input type="checkbox" value="chicken"> Chicken</label>
+        <label><input type="checkbox" value="beef"> Beef</label>
+        <label><input type="checkbox" value="pork"> Pork</label>
+        <label><input type="checkbox" value="fish"> Fish</label>
+        <label><input type="checkbox" value="egg"> Egg</label>
+        <label><input type="checkbox" value="tofu"> Tofu</label>
+        <label><input type="checkbox" value="lentils"> Lentils</label>
+        
+        <!-- Vegetables -->
+        <label><input type="checkbox" value="tomato"> Tomato</label>
+        <label><input type="checkbox" value="onion"> Onion</label>
+        <label><input type="checkbox" value="garlic"> Garlic</label>
+        <label><input type="checkbox" value="broccoli"> Broccoli</label>
+        <label><input type="checkbox" value="spinach"> Spinach</label>
+        <label><input type="checkbox" value="carrot"> Carrot</label>
+        <label><input type="checkbox" value="potato"> Potato</label>
+
+        <!-- Grains and Pasta -->
+        <label><input type="checkbox" value="rice"> Rice</label>
+        <label><input type="checkbox" value="pasta"> Pasta</label>
+        <label><input type="checkbox" value="quinoa"> Quinoa</label>
+        <label><input type="checkbox" value="bread"> Bread</label>
+        
+        <!-- Dairy and Cheese -->
+        <label><input type="checkbox" value="milk"> Milk</label>
+        <label><input type="checkbox" value="cheese"> Cheese</label>
+        <label><input type="checkbox" value="butter"> Butter</label>
+        <label><input type="checkbox" value="yogurt"> Yogurt</label>
+
+        <!-- Spices and Herbs -->
+        <label><input type="checkbox" value="basil"> Basil</label>
+        <label><input type="checkbox" value="oregano"> Oregano</label>
+        <label><input type="checkbox" value="cumin"> Cumin</label>
+        <label><input type="checkbox" value="turmeric"> Turmeric</label>
+        <label><input type="checkbox" value="ginger"> Ginger</label>
+
+        <!-- Fruits -->
+        <label><input type="checkbox" value="apple"> Apple</label>
+        <label><input type="checkbox" value="banana"> Banana</label>
+        <label><input type="checkbox" value="lemon"> Lemon</label>
+        <label><input type="checkbox" value="orange"> Orange</label>
+
+        <!-- Nuts and Seeds -->
+        <label><input type="checkbox" value="almonds"> Almonds</label>
+        <label><input type="checkbox" value="peanuts"> Peanuts</label>
+        <label><input type="checkbox" value="walnuts"> Walnuts</label>
+        <label><input type="checkbox" value="chia seeds"> Chia Seeds</label>
+        
+        <!-- Extras -->
+        <label><input type="checkbox" value="chocolate"> Chocolate</label>
+        <label><input type="checkbox" value="honey"> Honey</label>
+        <label><input type="checkbox" value="peanut butter"> Peanut Butter</label>
+        <label><input type="checkbox" value="avocado"> Avocado</label>
+
+        <!-- Filter Button -->
+        <button id="filter-btn" class="btn btn-success">Filter Recipes</button>
+    </div>
+</div>
+
+
+    <div class="container mt-4">
+        <div class="row" id="card_container">
+      
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Vinay Kumar Mishra. All Rights Reserved.</p>
+      </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+    <script src="index.js"></script>
+</body>
+</html>
